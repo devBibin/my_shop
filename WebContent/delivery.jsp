@@ -28,7 +28,7 @@ ${headTag}
 							<textarea rows="3" cols="72" name="location" placeholder="Введите адрес"></textarea>
 							<br>
 							<br>
-							<input type="checkbox" id="isCardSelected" checked="checked"> Оплата по карте
+							<input type="checkbox" id="isCardSelected" checked="checked" name="controller" value="checked"> Оплата по карте
 							<br>
 							<input type="text" size="74" id="card" name="card" placeholder="Введите реквизиты карты">
 			    	</div>

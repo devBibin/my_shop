@@ -53,7 +53,7 @@ public class ConfirmOrder extends HttpServlet {
 		else
 			location = "NULL";
 		
-		if (request.getParameter("card").length() > 0){
+		if (request.getParameter("controller").equals("checked")){
 			card = request.getParameter("card");
 			money = "card";
 		}
@@ -61,7 +61,6 @@ public class ConfirmOrder extends HttpServlet {
 			card = "NULL";
 			money = "cash";
 		}
-			
 		
 		for (int i = 0; i < count; i++){
 			obj.ConfirmOrderAuto((int)session.getAttribute("pers_id"), goods.get(i).get_id(), orders[i], type+"/"+money , location, card);

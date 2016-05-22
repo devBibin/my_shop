@@ -68,23 +68,24 @@ ${headTag}
 			</div>
 			
 			<div class="row">
-				<div class="col-md-5">
+				<div class="col-md-6">
 					<form action="ConfirmOrder">
 		   			<div class = "form-group">
-							<input type="checkbox" id="isCardSelected" checked="checked"> Оплата по карте
+							<input type="checkbox" id="isCardSelected" checked="checked" name="controller" value="checked"> Оплата по карте
 							<br>
 							<input type="text" size="74" id="card" name="card" placeholder="Введите реквизиты карты">
 			    	</div>
 		    		<div class = "form-group">
 		    			<div class="row">
-		    				<div class="pull-right">
+		    				<div class="col-md-9">
 								<input type="submit" class="btn btn-success" name="auto" value="Оплатить">
 							</div>  
 				    	</div> 
 		    		</div>
 		    	</form>
 				</div>
-				<div class="col-md-4">
+				<div class="col-md-3">
+					<br>
 					<form action="ChooseGood">
 					     <select class="form-control" name="company">
 				     	  <%for (Good good:goods) { %>

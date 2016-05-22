@@ -49,9 +49,8 @@ public class Authorization extends HttpServlet {
 		}
 		else
 		{
-			String exec_java = "<script> alert(\"Пользователь не обнаружен\") </script>";
-			String red_java = "<meta http-equiv=\"refresh\" content=\"0; url=/shop\" />";
-			response.getWriter().write(exec_java + red_java);		
+			session.setAttribute("alert", 6);
+			getServletContext().getRequestDispatcher("/main_page.jsp").forward(request, response);
 		} 
 	}
 

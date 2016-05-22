@@ -52,9 +52,9 @@
 		        <td><%out.print(good.get_name()); %></td>
 		        <td><%out.print(good.get_model()); %></td>
 		        <td><%out.print(good.get_company()); %></td>
-		        <td class="price" id=<%out.print("price" + i); %>><%out.print(good.get_price() * (1 - good.get_discount()));%></td>
+		        <td class="price" id=<%out.print("price" + i); %>><%out.print(good.get_price() * (1 - good.get_discount()));%><span class="glyphicon glyphicon-ruble"></span></td>
 		        <td>		              
-					<div class="spinbox" data-min="1" data-max="10" data-step="1">
+					<div class="spinbox" data-min="1" data-max=<%out.print(good.get_count()); %> data-step="1">
 					    <input id=<%out.print(i); %> class="form-control spinbox-input" type="text" value=<% out.print(good.get_order()); %>>
 					    <div class="spinbox-buttons"> 
 					        <button class="spinbox-up btn btn-default btn-xs" type="button">+</button>
@@ -77,16 +77,13 @@
     </tbody>
     </table>
     </div>
-    		<div class="row">
-			<div class="col-md-8">
+   		<div class="row">
+			<div class="col-md-offset-8 col-md-4">
+				<div class="pull-right">
+					<h4> Общая цена:<font size="5" color="green" name="total" id="total"></font><span class="glyphicon glyphicon-ruble"></span></h4>
+				</div>
 			</div>
-			<div class="col-md-4">
-				<h4> Общая цена: <font size="5" color="green" name="total" id="total"></font></h4>
-			</div>
-			
 		</div>
-		<br>
-		<br>
 		<div class="row">
 			<form action="ConfirmBasket">
 				<%for (int j = 1; j <= i; j++){ String id=new String("hidden" + j);%>
